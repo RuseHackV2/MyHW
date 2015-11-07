@@ -21,3 +21,26 @@ c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Teachers\obj\De
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.exe
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.pdb
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers_Content.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\MyHW_Teachers.exe.config
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.exe
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.pdb
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\MyHW_Teachers.exe
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\MyHW_Teachers.pdb
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\EntityFramework.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\MahApps.Metro.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\System.Windows.Interactivity.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\EntityFramework.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\bin\Debug\MahApps.Metro.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.csprojResolveAssemblyReference.cache
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\App.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers_Content.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers_MarkupCompile.cache
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers_MarkupCompile.lref
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\App.baml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MainWindow.baml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.g.resources
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.Properties.Resources.resources
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.csproj.GenerateResource.Cache

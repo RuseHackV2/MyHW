@@ -20,3 +20,25 @@ c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Students\obj\De
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Students\obj\Debug\MyHW_Students.exe
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Students\obj\Debug\MyHW_Students.pdb
 c:\Users\Kaloyan\documents\visual studio 2015\Projects\MyHW\MyHW_Students\obj\Debug\MyHW_Students_Content.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\MyHW_Students.exe.config
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students.exe
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students.pdb
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\MyHW_Students.exe
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\MyHW_Students.pdb
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\EntityFramework.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\MahApps.Metro.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\System.Windows.Interactivity.dll
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\EntityFramework.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\bin\Debug\MahApps.Metro.xml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\App.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students_Content.g.cs
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students_MarkupCompile.cache
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students_MarkupCompile.lref
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\App.baml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MainWindow.baml
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students.g.resources
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students.Properties.Resources.resources
+D:\Projects\C#\2015\MyHW\MyHW\MyHW_Students\obj\Debug\MyHW_Students.csproj.GenerateResource.Cache

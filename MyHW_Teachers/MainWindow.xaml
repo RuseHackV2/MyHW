@@ -9,8 +9,6 @@
         BorderBrush="{DynamicResource AccentColorBrush}"
         BorderThickness="1"
         Title="MyHW - Teacher" Height="350" Width="525"
-        TitleCaps="False">
-    <Grid>
-        
-    </Grid>
+        TitleCaps="False"
+        Icon="MyHW_Icon.ico">
 </Controls:MetroWindow>
