@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7957379b6daa4e69b437fc03ad9e9d46" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="MyHWModel.Comment" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.CommentsFan" Width="1.5" PointX="11.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.Group" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.GroupsTask" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.Homework" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.HomeworksComment" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.HomeworksFan" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.Student" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.StudentsGroup" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.StudentsHomework" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.Task" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.Teacher" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyHWModel.TeachersGroup" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="MyHWModel.FK_CommentsFans_Comments" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_HomeworksComments_Comments" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_CommentsFans_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_CommentsFans_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_GroupsTasks_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_Homeworks_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_StudentsGroups_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_TeachersGroups_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_GroupsTasks_Tasks1" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_Homeworks_Tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_HomeworksComments_Homeworks" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_HomeworksFans_Homeworks" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_StudentsHomeworks_Homeworks" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_HomeworksFans_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_HomeworksFans_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_StudentsGroups_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_StudentsHomeworks_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="MyHWModel.FK_TeachersGroups_Teachers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

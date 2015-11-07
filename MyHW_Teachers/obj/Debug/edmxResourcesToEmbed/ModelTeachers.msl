@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyHWModelStoreContainer" CdmEntityContainer="MyHWEntities">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="MyHWModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="comment1" ColumnName="comment" />
+          <ScalarProperty Name="likesCount" ColumnName="likesCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentsFans">
+      <EntityTypeMapping TypeName="MyHWModel.CommentsFan">
+        <MappingFragment StoreEntitySet="CommentsFans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+          <ScalarProperty Name="fanId" ColumnName="fanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="MyHWModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupsTasks">
+      <EntityTypeMapping TypeName="MyHWModel.GroupsTask">
+        <MappingFragment StoreEntitySet="GroupsTasks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="taskId" ColumnName="taskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homeworks">
+      <EntityTypeMapping TypeName="MyHWModel.Homework">
+        <MappingFragment StoreEntitySet="Homeworks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="taskId" ColumnName="taskId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="submittedFile" ColumnName="submittedFile" />
+          <ScalarProperty Name="dateSubmitted" ColumnName="dateSubmitted" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="review" ColumnName="review" />
+          <ScalarProperty Name="likesCount" ColumnName="likesCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeworksComments">
+      <EntityTypeMapping TypeName="MyHWModel.HomeworksComment">
+        <MappingFragment StoreEntitySet="HomeworksComments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="homeworkId" ColumnName="homeworkId" />
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeworksFans">
+      <EntityTypeMapping TypeName="MyHWModel.HomeworksFan">
+        <MappingFragment StoreEntitySet="HomeworksFans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="homeworkId" ColumnName="homeworkId" />
+          <ScalarProperty Name="fanId" ColumnName="fanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="MyHWModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsGroups">
+      <EntityTypeMapping TypeName="MyHWModel.StudentsGroup">
+        <MappingFragment StoreEntitySet="StudentsGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="studentId" ColumnName="studentId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsHomeworks">
+      <EntityTypeMapping TypeName="MyHWModel.StudentsHomework">
+        <MappingFragment StoreEntitySet="StudentsHomeworks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="studentId" ColumnName="studentId" />
+          <ScalarProperty Name="homeworkId" ColumnName="homeworkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="MyHWModel.Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="problem" ColumnName="problem" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="MyHWModel.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeachersGroups">
+      <EntityTypeMapping TypeName="MyHWModel.TeachersGroup">
+        <MappingFragment StoreEntitySet="TeachersGroups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

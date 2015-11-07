@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyHWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="likesCount" Type="Int32" Nullable="false" />
+    <Property Name="fansIds" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Comments" FromRole="Comments" ToRole="CommentsFans" />
+    <NavigationProperty Name="HomeworksComments" Relationship="Self.FK_HomeworksComments_Comments" FromRole="Comments" ToRole="HomeworksComments" />
+  </EntityType>
+  <EntityType Name="CommentsFan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="commentId" Type="Int32" Nullable="false" />
+    <Property Name="fanId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_CommentsFans_Comments" FromRole="CommentsFans" ToRole="Comments" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_CommentsFans_Students" FromRole="CommentsFans" ToRole="Students" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_CommentsFans_Teachers" FromRole="CommentsFans" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentsIds" Type="Int32" Nullable="false" />
+    <Property Name="teacherId" Type="Int32" Nullable="false" />
+    <Property Name="tasksIds" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GroupsTasks" Relationship="Self.FK_GroupsTasks_Groups" FromRole="Groups" ToRole="GroupsTasks" />
+    <NavigationProperty Name="Homeworks" Relationship="Self.FK_Homeworks_Groups" FromRole="Groups" ToRole="Homeworks" />
+    <NavigationProperty Name="StudentsGroups" Relationship="Self.FK_StudentsGroups_Groups" FromRole="Groups" ToRole="StudentsGroups" />
+    <NavigationProperty Name="TeachersGroups" Relationship="Self.FK_TeachersGroups_Groups" FromRole="Groups" ToRole="TeachersGroups" />
+  </EntityType>
+  <EntityType Name="GroupsTask">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="taskId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_GroupsTasks_Groups" FromRole="GroupsTasks" ToRole="Groups" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_GroupsTasks_Tasks1" FromRole="GroupsTasks" ToRole="Tasks" />
+  </EntityType>
+  <EntityType Name="Homework">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="taskId" Type="Int32" Nullable="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="submittedFile" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="dateSubmitted" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="commentsIds" Type="Int32" Nullable="false" />
+    <Property Name="likesCount" Type="Int32" Nullable="false" />
+    <Property Name="fansIds" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_Homeworks_Groups" FromRole="Homeworks" ToRole="Groups" />
+    <NavigationProperty Name="Task" Relationship="Self.FK_Homeworks_Tasks" FromRole="Homeworks" ToRole="Tasks" />
+    <NavigationProperty Name="HomeworksComments" Relationship="Self.FK_HomeworksComments_Homeworks" FromRole="Homeworks" ToRole="HomeworksComments" />
+    <NavigationProperty Name="HomeworksFans" Relationship="Self.FK_HomeworksFans_Homeworks" FromRole="Homeworks" ToRole="HomeworksFans" />
+    <NavigationProperty Name="StudentsHomeworks" Relationship="Self.FK_StudentsHomeworks_Homeworks" FromRole="Homeworks" ToRole="StudentsHomeworks" />
+  </EntityType>
+  <EntityType Name="HomeworksComment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="homeworkId" Type="Int32" Nullable="false" />
+    <Property Name="commentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK_HomeworksComments_Comments" FromRole="HomeworksComments" ToRole="Comments" />
+    <NavigationProperty Name="Homework" Relationship="Self.FK_HomeworksComments_Homeworks" FromRole="HomeworksComments" ToRole="Homeworks" />
+  </EntityType>
+  <EntityType Name="HomeworksFan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="homeworkId" Type="Int32" Nullable="false" />
+    <Property Name="fanId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Homework" Relationship="Self.FK_HomeworksFans_Homeworks" FromRole="HomeworksFans" ToRole="Homeworks" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_HomeworksFans_Students" FromRole="HomeworksFans" ToRole="Students" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_HomeworksFans_Teachers" FromRole="HomeworksFans" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="myHomeworksIds" Type="Int32" Nullable="false" />
+    <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Students" FromRole="Students" ToRole="CommentsFans" />
+    <NavigationProperty Name="HomeworksFans" Relationship="Self.FK_HomeworksFans_Students" FromRole="Students" ToRole="HomeworksFans" />
+    <NavigationProperty Name="StudentsGroups" Relationship="Self.FK_StudentsGroups_Students" FromRole="Students" ToRole="StudentsGroups" />
+    <NavigationProperty Name="StudentsHomeworks" Relationship="Self.FK_StudentsHomeworks_Students" FromRole="Students" ToRole="StudentsHomeworks" />
+  </EntityType>
+  <EntityType Name="StudentsGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentId" Type="Int32" Nullable="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_StudentsGroups_Groups" FromRole="StudentsGroups" ToRole="Groups" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_StudentsGroups_Students" FromRole="StudentsGroups" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="StudentsHomework">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="studentId" Type="Int32" Nullable="false" />
+    <Property Name="homeworkId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Homework" Relationship="Self.FK_StudentsHomeworks_Homeworks" FromRole="StudentsHomeworks" ToRole="Homeworks" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_StudentsHomeworks_Students" FromRole="StudentsHomeworks" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="problem" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="deadline" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="GroupsTasks" Relationship="Self.FK_GroupsTasks_Tasks1" FromRole="Tasks" ToRole="GroupsTasks" />
+    <NavigationProperty Name="Homeworks" Relationship="Self.FK_Homeworks_Tasks" FromRole="Tasks" ToRole="Homeworks" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Teachers" FromRole="Teachers" ToRole="CommentsFans" />
+    <NavigationProperty Name="HomeworksFans" Relationship="Self.FK_HomeworksFans_Teachers" FromRole="Teachers" ToRole="HomeworksFans" />
+    <NavigationProperty Name="TeachersGroups" Relationship="Self.FK_TeachersGroups_Teachers" FromRole="Teachers" ToRole="TeachersGroups" />
+  </EntityType>
+  <EntityType Name="TeachersGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="teacherId" Type="Int32" Nullable="false" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_TeachersGroups_Groups" FromRole="TeachersGroups" ToRole="Groups" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_TeachersGroups_Teachers" FromRole="TeachersGroups" ToRole="Teachers" />
+  </EntityType>
+  <Association Name="FK_CommentsFans_Comments">
+    <End Role="Comments" Type="Self.Comment" Multiplicity="1" />
+    <End Role="CommentsFans" Type="Self.CommentsFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CommentsFans">
+        <PropertyRef Name="commentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeworksComments_Comments">
+    <End Role="Comments" Type="Self.Comment" Multiplicity="1" />
+    <End Role="HomeworksComments" Type="Self.HomeworksComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HomeworksComments">
+        <PropertyRef Name="commentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsFans_Students">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="CommentsFans" Type="Self.CommentsFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CommentsFans">
+        <PropertyRef Name="commentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentsFans_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="CommentsFans" Type="Self.CommentsFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CommentsFans">
+        <PropertyRef Name="fanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupsTasks_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="GroupsTasks" Type="Self.GroupsTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GroupsTasks">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Homeworks_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Homeworks">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsGroups_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="StudentsGroups" Type="Self.StudentsGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StudentsGroups">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachersGroups_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="TeachersGroups" Type="Self.TeachersGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TeachersGroups">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupsTasks_Tasks1">
+    <End Role="Tasks" Type="Self.Task" Multiplicity="1" />
+    <End Role="GroupsTasks" Type="Self.GroupsTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GroupsTasks">
+        <PropertyRef Name="taskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Homeworks_Tasks">
+    <End Role="Tasks" Type="Self.Task" Multiplicity="1" />
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Homeworks">
+        <PropertyRef Name="taskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeworksComments_Homeworks">
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="1" />
+    <End Role="HomeworksComments" Type="Self.HomeworksComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Homeworks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HomeworksComments">
+        <PropertyRef Name="homeworkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeworksFans_Homeworks">
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="1" />
+    <End Role="HomeworksFans" Type="Self.HomeworksFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Homeworks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HomeworksFans">
+        <PropertyRef Name="homeworkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsHomeworks_Homeworks">
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="1" />
+    <End Role="StudentsHomeworks" Type="Self.StudentsHomework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Homeworks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StudentsHomeworks">
+        <PropertyRef Name="homeworkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeworksFans_Students">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="HomeworksFans" Type="Self.HomeworksFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HomeworksFans">
+        <PropertyRef Name="fanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeworksFans_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="HomeworksFans" Type="Self.HomeworksFan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HomeworksFans">
+        <PropertyRef Name="fanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsGroups_Students">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentsGroups" Type="Self.StudentsGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StudentsGroups">
+        <PropertyRef Name="studentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsHomeworks_Students">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentsHomeworks" Type="Self.StudentsHomework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="StudentsHomeworks">
+        <PropertyRef Name="studentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachersGroups_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="TeachersGroups" Type="Self.TeachersGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TeachersGroups">
+        <PropertyRef Name="teacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyHWEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="CommentsFans" EntityType="Self.CommentsFan" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="GroupsTasks" EntityType="Self.GroupsTask" />
+    <EntitySet Name="Homeworks" EntityType="Self.Homework" />
+    <EntitySet Name="HomeworksComments" EntityType="Self.HomeworksComment" />
+    <EntitySet Name="HomeworksFans" EntityType="Self.HomeworksFan" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="StudentsGroups" EntityType="Self.StudentsGroup" />
+    <EntitySet Name="StudentsHomeworks" EntityType="Self.StudentsHomework" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="TeachersGroups" EntityType="Self.TeachersGroup" />
+    <AssociationSet Name="FK_CommentsFans_Comments" Association="Self.FK_CommentsFans_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="CommentsFans" EntitySet="CommentsFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeworksComments_Comments" Association="Self.FK_HomeworksComments_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="HomeworksComments" EntitySet="HomeworksComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsFans_Students" Association="Self.FK_CommentsFans_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="CommentsFans" EntitySet="CommentsFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentsFans_Teachers" Association="Self.FK_CommentsFans_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="CommentsFans" EntitySet="CommentsFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupsTasks_Groups" Association="Self.FK_GroupsTasks_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="GroupsTasks" EntitySet="GroupsTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Homeworks_Groups" Association="Self.FK_Homeworks_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Homeworks" EntitySet="Homeworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsGroups_Groups" Association="Self.FK_StudentsGroups_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="StudentsGroups" EntitySet="StudentsGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersGroups_Groups" Association="Self.FK_TeachersGroups_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="TeachersGroups" EntitySet="TeachersGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupsTasks_Tasks1" Association="Self.FK_GroupsTasks_Tasks1">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="GroupsTasks" EntitySet="GroupsTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Homeworks_Tasks" Association="Self.FK_Homeworks_Tasks">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Homeworks" EntitySet="Homeworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeworksComments_Homeworks" Association="Self.FK_HomeworksComments_Homeworks">
+      <End Role="Homeworks" EntitySet="Homeworks" />
+      <End Role="HomeworksComments" EntitySet="HomeworksComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeworksFans_Homeworks" Association="Self.FK_HomeworksFans_Homeworks">
+      <End Role="Homeworks" EntitySet="Homeworks" />
+      <End Role="HomeworksFans" EntitySet="HomeworksFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsHomeworks_Homeworks" Association="Self.FK_StudentsHomeworks_Homeworks">
+      <End Role="Homeworks" EntitySet="Homeworks" />
+      <End Role="StudentsHomeworks" EntitySet="StudentsHomeworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeworksFans_Students" Association="Self.FK_HomeworksFans_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="HomeworksFans" EntitySet="HomeworksFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeworksFans_Teachers" Association="Self.FK_HomeworksFans_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="HomeworksFans" EntitySet="HomeworksFans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsGroups_Students" Association="Self.FK_StudentsGroups_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentsGroups" EntitySet="StudentsGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsHomeworks_Students" Association="Self.FK_StudentsHomeworks_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentsHomeworks" EntitySet="StudentsHomeworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersGroups_Teachers" Association="Self.FK_TeachersGroups_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="TeachersGroups" EntitySet="TeachersGroups" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
