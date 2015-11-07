@@ -133,6 +133,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModelTeachers.Context.cs">
@@ -175,12 +179,21 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Entypo-license.txt" />
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+    <Resource Include="profile.png" />
+    <Resource Include="teacher.png" />
+    <Resource Include="MyHW.png" />
+    <Resource Include="MyHW_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ModelTeachers.Context.tt">
@@ -193,7 +206,6 @@
       <DependentUpon>ModelTeachers.edmx</DependentUpon>
       <LastGenOutput>ModelTeachers.cs</LastGenOutput>
     </Content>
-    <Resource Include="MyHW_Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

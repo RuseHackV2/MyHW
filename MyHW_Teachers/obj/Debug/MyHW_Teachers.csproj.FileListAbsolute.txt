@@ -44,3 +44,5 @@ D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MainWindow.baml
 D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.g.resources
 D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.Properties.Resources.resources
 D:\Projects\C#\2015\MyHW\MyHW\MyHW_Teachers\obj\Debug\MyHW_Teachers.csproj.GenerateResource.Cache
+C:\Users\Kaloyan\Documents\Visual Studio 2015\Projects\MyHW\MyHW_Teachers\obj\Debug\Resources\Icons.baml
+C:\Users\Kaloyan\Documents\Visual Studio 2015\Projects\MyHW\MyHW_Teachers\obj\Debug\Resources\Icons.g.cs

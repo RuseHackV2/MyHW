@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="userId" Type="Int32" Nullable="false" />
-    <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="likesCount" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Comments" FromRole="Comments" ToRole="CommentsFans" />
     <NavigationProperty Name="HomeworksComments" Relationship="Self.FK_HomeworksComments_Comments" FromRole="Comments" ToRole="HomeworksComments" />
@@ -28,6 +28,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="teacherId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="GroupsTasks" Relationship="Self.FK_GroupsTasks_Groups" FromRole="Groups" ToRole="GroupsTasks" />
     <NavigationProperty Name="Homeworks" Relationship="Self.FK_Homeworks_Groups" FromRole="Groups" ToRole="Homeworks" />
     <NavigationProperty Name="StudentsGroups" Relationship="Self.FK_StudentsGroups_Groups" FromRole="Groups" ToRole="StudentsGroups" />
@@ -50,10 +51,10 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="taskId" Type="Int32" Nullable="false" />
     <Property Name="groupId" Type="Int32" Nullable="false" />
-    <Property Name="submittedFile" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="submittedFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="dateSubmitted" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="review" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="likesCount" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Group" Relationship="Self.FK_Homeworks_Groups" FromRole="Homeworks" ToRole="Groups" />
     <NavigationProperty Name="Task" Relationship="Self.FK_Homeworks_Tasks" FromRole="Homeworks" ToRole="Tasks" />
@@ -87,10 +88,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Students" FromRole="Students" ToRole="CommentsFans" />
     <NavigationProperty Name="HomeworksFans" Relationship="Self.FK_HomeworksFans_Students" FromRole="Students" ToRole="HomeworksFans" />
@@ -122,7 +123,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="problem" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="deadline" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="GroupsTasks" Relationship="Self.FK_GroupsTasks_Tasks1" FromRole="Tasks" ToRole="GroupsTasks" />
@@ -133,10 +134,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="CommentsFans" Relationship="Self.FK_CommentsFans_Teachers" FromRole="Teachers" ToRole="CommentsFans" />
     <NavigationProperty Name="HomeworksFans" Relationship="Self.FK_HomeworksFans_Teachers" FromRole="Teachers" ToRole="HomeworksFans" />
@@ -244,7 +245,7 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="TeachersGroups">
-        <PropertyRef Name="groupId" />
+        <PropertyRef Name="teacherId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -22,7 +22,7 @@ namespace MyHW_Teachers
         }
     
         public int id { get; set; }
-        public byte[] problem { get; set; }
+        public string problem { get; set; }
         public System.DateTime dateCreated { get; set; }
         public System.DateTime deadline { get; set; }
     

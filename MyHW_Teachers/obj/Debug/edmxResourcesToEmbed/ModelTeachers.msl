@@ -25,6 +25,7 @@
         <MappingFragment StoreEntitySet="Groups">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

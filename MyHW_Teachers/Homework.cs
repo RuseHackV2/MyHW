@@ -25,7 +25,7 @@ namespace MyHW_Teachers
         public int id { get; set; }
         public int taskId { get; set; }
         public int groupId { get; set; }
-        public byte[] submittedFile { get; set; }
+        public string submittedFile { get; set; }
         public System.DateTime dateSubmitted { get; set; }
         public string grade { get; set; }
         public string review { get; set; }

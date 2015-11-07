@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="userId" Type="int" Nullable="false" />
-    <Property Name="comment" Type="varchar(max)" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" Nullable="false" />
     <Property Name="likesCount" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CommentsFans">
@@ -23,6 +23,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="teacherId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="GroupsTasks">
     <Key>
@@ -39,10 +40,10 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="taskId" Type="int" Nullable="false" />
     <Property Name="groupId" Type="int" Nullable="false" />
-    <Property Name="submittedFile" Type="varbinary(max)" Nullable="false" />
+    <Property Name="submittedFile" Type="nvarchar(max)" Nullable="false" />
     <Property Name="dateSubmitted" Type="date" Nullable="false" />
-    <Property Name="grade" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="review" Type="varchar(max)" Nullable="false" />
+    <Property Name="grade" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="review" Type="nvarchar(max)" Nullable="false" />
     <Property Name="likesCount" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="HomeworksComments">
@@ -66,10 +67,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="password" Type="varchar(max)" Nullable="false" />
-    <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastName" Type="varchar(max)" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="avatar" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="StudentsGroups">
@@ -93,7 +94,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="problem" Type="varbinary(max)" Nullable="false" />
+    <Property Name="problem" Type="nvarchar(max)" Nullable="false" />
     <Property Name="dateCreated" Type="date" Nullable="false" />
     <Property Name="deadline" Type="date" Nullable="false" />
   </EntityType>
@@ -102,10 +103,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="password" Type="varchar(max)" Nullable="false" />
-    <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="avatar" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TeachersGroups">
@@ -316,7 +317,7 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="TeachersGroups">
-        <PropertyRef Name="groupId" />
+        <PropertyRef Name="teacherId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

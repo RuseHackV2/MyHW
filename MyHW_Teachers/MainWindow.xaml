@@ -8,7 +8,72 @@
         mc:Ignorable="d"
         BorderBrush="{DynamicResource AccentColorBrush}"
         BorderThickness="1"
-        Title="MyHW - Teacher" Height="350" Width="525"
+        Title="MyHW - Teacher" Height="599.6" Width="804"
         TitleCaps="False"
-        Icon="MyHW_Icon.ico">
+        Icon="MyHW_Icon.ico" MinHeight="600" MinWidth="800">
+    <TabControl x:Name="tabControl" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+        <TabItem Header="Вход" IsEnabled="False">
+            <Grid Background="#FFF5F5F5">
+                <Grid HorizontalAlignment="Center" Height="350"
+                     VerticalAlignment="Center" Width="530">
+                    <Label x:Name="label" Content="Потребителско име:" HorizontalAlignment="Left" Margin="275,50,0,0" VerticalAlignment="Top" Style="{DynamicResource DescriptionHeaderStyle}"/>
+                    <TextBox x:Name="usernameBox" Controls:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" Margin="275,89,-1,0" TextWrapping="Wrap" Controls:TextBoxHelper.Watermark="Потребителско име" VerticalAlignment="Top" Width="255" FontSize="18" Text="teacher1"/>
+                    <Label x:Name="label1" Content="Парола:" HorizontalAlignment="Left" Margin="275,140,0,0" VerticalAlignment="Top" Style="{DynamicResource DescriptionHeaderStyle}"/>
+                    <PasswordBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="passwordBox" HorizontalAlignment="Left" Margin="275,179,-1,0" VerticalAlignment="Top" Width="255" Controls:TextBoxHelper.Watermark="Парола" FontSize="18" Password="passteacher1"/>
+                    <Button x:Name="button" IsDefault="True" Height="32" Content="Вход" Margin="412,232,10,68" FontSize="22" Style="{DynamicResource SquareButtonStyle}" BorderThickness="2" Padding="0,-2,0,5" BorderBrush="#CCF0A30A" Width="100" Click="button_Click" Focusable="False"/>
+                    <Image x:Name="teacher" HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="255" Source="Teacher.png" Opacity="0.7"/>
+                    <Image x:Name="logo" HorizontalAlignment="Left" Height="131" VerticalAlignment="Top" Width="255" Source="MyHW.png" Margin="0,210,0,0"/>
+                </Grid>
+                <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="25,32,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="" IsEnabled="False">
+            <Grid Background="#FFF5F5F5">
+                <DockPanel LastChildFill="True">
+                    <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Width="255" Background="#FFE1E1E1">
+                        <Grid Height="85">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="1" x:Name="firstName" Content="Петър-Александър" Height="35" FontSize="18"/>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="lastName" Content="Георгиев" Height="35" FontSize="18" />
+                            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="5" Height="75" Width="75" Source="profile.png" Opacity="0.7"/>
+                        </Grid>
+                        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+
+                        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+                    </StackPanel>
+                    <Grid x:Name="Tiles" DockPanel.Dock="Left" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--" Controls:Tile Title="Добави група" Margin="246,10,147,372">
+                            <Grid Width="50" Height="50"
+                          Background="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:Tile}}}">
+                                <Grid.OpacityMask>
+                                    <VisualBrush Stretch="Fill"
+                                         Visual="{DynamicResource appbar_add}" />
+                                </Grid.OpacityMask>
+                            </Grid>
+                        </Controls:Tile-->
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="" IsEnabled="False">
+            <Grid Background="#FFF5F5F5"/>
+        </TabItem>
+    </TabControl>
 </Controls:MetroWindow>
